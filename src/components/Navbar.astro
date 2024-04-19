@@ -1,0 +1,36 @@
+---
+import { Image } from "astro:assets";
+import { siteConfig } from "../const";
+import Logo from "./public/logo.svg"
+const pathname = Astro.url.pathname
+---
+
+<header class="px-5 border-b-2 border-b-dark-12 ">
+    <nav class="navbar md:px-5 p-5 pr-0 pb-0 border-l-2 border-r-2  pt-10 border-dark-12 max-w-7xl mx-auto  md:pt-auto  ">
+        <div class="navbar-start">
+
+
+            <a href="/" class="text-xl md:text-2xl lg:text-3xl font-bold">
+            <Image src={Logo} class=" w-2/3 md:w-4/5 " alt={siteConfig.siteName}/>
+            </a>
+        </div>
+        <ul class="navbar-center hidden md:flex bg-dark-12 text-base rounded-t-lg gap-[1.5px] border-2 border-dark-12  border-b-0  overflow-hidden ">
+        
+            {siteConfig.navLinks.slice(0,-1).map(link => <a class:list={["p-5 bg-black",{ "bg-transparent": pathname== link.href }]} href={link.href}>{link.name}</a>)}
+        </ul>
+
+        <div class="navbar-end">
+
+            <a href={siteConfig.navLinks[4].href} class="btn hidden md:flex">{siteConfig.navLinks[4].name}</a>
+            <div class="md:hidden dropdown dropdown-bottom dropdown-end">
+                <div tabindex="0" role="button" class="btn rounded-none border-[2px] rounded-tl-lg border-b-0 border-r-0   !bg-black">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+                </div>
+                <ul tabindex="0" class="menu menu-lg border border-dark-12 shadow-dark-12  dropdown-content mt-3 z-[1] p-2 shadow-2xl   rounded-box text-nowrap  ">
+                    {siteConfig.navLinks.slice(0,-1).map(link => <a class:list={["p-3 ",{ "text-grey-50  text-dark-12": pathname== link.href }]} href={link.href}>{link.name}</a>)}
+                </ul>
+              </div>
+        </div>
+
+    </nav>
+</header>
