@@ -1,0 +1,86 @@
+---
+import ServicesList from "./ServicesList";
+import Social from "./Social.astro";
+import PurpleLink from "./ui/PurpleLink.astro";
+
+const linkClass  = "text-white link decoration-[2px] decoration-dark-12 underline-offset-8";
+const ulClass  = "grid gap-5 text-grey-95";
+const divClass = "flex flex-col gap-5"
+---
+
+
+
+
+<footer>
+    <article class="flex w-full items-end px-5 md:px-44">
+
+    <h1 class=" text-7xl md:text-[15rem] lg:text-[18rem] text-dark-15 font-semibold  ml-auto">DAMIEN</h1>
+    </article>
+    <ServicesList client:visible/>
+    <article class="px-5 md:px-44 ">
+    <div class="flex flex-col md:flex-row border-x-2 ">
+        <div class="p-5 flex flex-col gap-10 md:py-24">
+            <p class="text-subtitle ">A more meaningful home for photography</p>
+            <div class="  lg:col-span-5 text-title text-white ">
+                <h2 class="flex w-fit items-center  gap-3">LET’S <PurpleLink href="#"/></h2>
+              <h2 class="text-nowrap">WORK TOGETHER</h2>
+            </div>
+        </div>
+        <div class="divider divider-vertical md:divider-horizontal"></div>
+        <div class="uppercase grid grid-cols-2 md:grid-cols-4 m-auto justify-evenly w-full p-5 md:py-24">
+           <div class={divClass}>
+            <p class=" font-semibold ">Home</p>
+            <ul class={ulClass}>
+                <li class={linkClass}>About Me</li>
+                <li class={linkClass}>My WOrke</li>
+                <li class={linkClass}>Testimonials</li>
+            </ul>
+           </div>
+           <div class={divClass}>
+            <p class=" font-semibold">Clients</p>
+            <ul class={ulClass}>
+                <li class={linkClass}>Klovesto</li>
+                <li class={linkClass}>Nukeway</li>
+                <li class={linkClass}>Cloven’s</li>
+                <li class={linkClass}>MenVol</li>
+            </ul>
+           </div>
+           <div class={divClass}>
+            <p class=" font-semibold">Portfolio</p>
+            <ul class={ulClass}>
+                <li class={linkClass}>Events</li>
+                <li class={linkClass}>Portrait</li>
+                <li class={linkClass}>Branding</li>
+                <li class={linkClass}>Commerciale</li>
+                <li class={linkClass}>Wedding</li>
+            </ul>
+           </div>
+           <div class={divClass}>
+            <p class=" font-semibold">Services</p>
+            <ul class={ulClass}>
+                <li class={linkClass}>Portraits</li>
+                <li class={linkClass}>Events</li>
+                <li class={linkClass}>Commercial</li>
+            </ul>
+           </div>
+        </div>
+
+    </div>
+    </article>
+    <article class="p-5 flex flex-col text-center gap-5 md:flex-row items-center justify-between border-t-2 px-5 md:px-44">
+        <div class="flex text-grey-50">
+            <a href="#" class="">Terms & Conditions</a>
+            <div class=" divider  divider-horizontal"></div>
+            <a href="#" class="">Privacy Policy</a>
+        </div>
+        <div class="hidden md:block">
+            <Social/>
+        </div>
+        <div>
+            <p>© 2024 Damien Braun Photography. All rights reserved.</p>
+        </div>
+        <div class="md:hidden">
+            <Social/>
+        </div>
+    </article>
+</footer>

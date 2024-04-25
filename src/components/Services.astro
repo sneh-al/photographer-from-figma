@@ -1,0 +1,19 @@
+---
+
+import { services } from "../const";
+import Package from "./ui/Package.astro";
+import Section from "./ui/Section.astro";
+import ServiceSection from "./ui/ServiceSection.astro";
+---
+
+<Section>
+
+  {services.map(service => 
+  <ServiceSection title={service.name} info={service.info}>
+    {service.types.map(type => <Package title={type.name} price={type.fees} outlines={type.outline}/>)}
+
+  </ServiceSection>
+
+
+  )}
+</Section>

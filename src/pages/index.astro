@@ -1,11 +1,24 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from '@layouts/Layout.astro';
+import Card from '@components/Card.astro';
+import Hero from '@components/Hero.astro';
+import About from '@components/About.astro';
+import Service from '@components/Service.astro';
+import Portfolio from '@components/Portfolio.astro';
+import FAQ from '@components/FAQ.astro';
+import Testimonials from '@components/Testimonials.astro';
+
 ---
 
 <Layout title="Welcome to Astro.">
-	<main class="w-full">
-	
+	<main class="w-full h-full">
+		<Hero/>
+		<About/>
+		<Service/>
+		<Portfolio/>
+		<FAQ/>
+		<Testimonials/>
+	  
 	</main>
 </Layout>
 

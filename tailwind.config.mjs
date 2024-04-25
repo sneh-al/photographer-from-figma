@@ -30,8 +30,11 @@ export default {
 			"grey-97": "#f7f7f8",
 			"grey-99": "#fcfcfd"
 		  },
+		  borderColor: {
+			DEFAULT: '#1c1c21',
+		},
 		extend: {},
-		daisyui: {
+		daisyui: {	
 			themes: false, 
 			darkTheme: "dark", // name of one of the included themes for dark mode
 			base: false, // applies background color and foreground color for root element by default

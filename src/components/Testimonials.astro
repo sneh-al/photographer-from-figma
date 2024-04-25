@@ -1,0 +1,98 @@
+---
+import SectionTitle from "./ui/SectionTitle.astro";
+import { reviews } from "../const";
+import Section from "./ui/Section.astro";
+import PageButton from "./ui/PageButton.astro";
+import Social from "./Social.astro";
+---
+
+<Section>
+  <header>
+    <SectionTitle title="Testimonials" heading="What My Clients Say" />
+    <div class="flex justify-between">
+       <div>
+        <p>Total Revies</p>
+        <h6 class="text-title2 text-grey-80">323</h6>
+       </div>
+        <div class="flex gap-6">
+            <div class="border-2 items-center p-2 w-fit rounded-[5rem] hidden md:flex gap-3">
+              <button class="btn btn-circle">
+                <svg
+                  width="12"
+                  height="20"
+                  viewBox="0 0 12 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10.25 1.5L1.75 10L10.25 18.5"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg>
+              </button>
+              <button class="btn btn-circle">
+                <svg
+                  width="12"
+                  height="20"
+                  class="rotate-180"
+                  viewBox="0 0 12 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10.25 1.5L1.75 10L10.25 18.5"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg>
+              </button>
+            </div>
+            <PageButton href="/services" text="View All Services" />
+          </div>
+    </div>
+  </header>
+  <div class="divider"></div>
+
+
+  <main class="flex pt-5 md:pt-16">
+    <div class="flex flex-col md:flex-row justify-evenly items-center gap-6">
+      {
+        reviews.map((review) => (
+          <div class="card bg-dark-06 w-full h-full gap-12 relative overflow-hidden  ">
+            <div class=" absolute aspect-video bg-gradient-to-tr from-[#18181B] to-[#18181B] rounded-3xl -top-[20%]  left-[70%] w-full h-full rotate-[40deg] "></div>
+            <div class=" absolute aspect-video bg-gradient-to-tr from-[#18181B] to-[#18181B] rounded-3xl top-[20%]  right-[50%] w-full h-full rotate-[40deg] "></div>
+            {/* <div class=" aspect-video bg-dark-12 "></div> */}
+         <div class=" card-body gap-10 z-10">
+
+            <div class=" flex justify-between">
+            <div class=" ">
+                <h3 class="text-subtitle text-white">{review.name}</h3>
+                <p class="card-title">{review.city}</p>
+                </div>
+            <div  class="">
+                <Social/>
+            </div>
+            </div>
+            <div class="rating">
+  <input type="radio" name="rating-2" class="mask mask-star-2 bg-[#FFCE22]" />
+  <input type="radio" name="rating-2" class="mask mask-star-2 bg-[#FFCE22]"  />
+  <input type="radio" name="rating-2" class="mask mask-star-2 bg-[#FFCE22]" />
+  <input type="radio" name="rating-2" class="mask mask-star-2 bg-[#FFCE22]" />
+  <input type="radio" name="rating-2" class="mask mask-star-2 bg-[#FFCE22]" />
+</div>
+<p class="text-subtitle text-white">
+    {review.info}
+</p >
+
+         </div>
+
+          </div>
+        ))
+      }
+    </div>
+  
+  </main>
+</Section>

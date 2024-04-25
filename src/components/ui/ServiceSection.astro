@@ -1,0 +1,45 @@
+---
+
+
+type Props ={
+    title: string,
+    info: string
+}
+const{title,info} = Astro.props
+---
+
+
+
+
+<article class="py-5 md:py-24 ">
+    <header class="grid grid-cols-1 md:grid-cols-2 py-5 md:py-24">
+        <div class="flex flex-col gap-5 md:gap-10 text-grey-50 ">
+            <h3 class=" text-title3 text-semibold">{title}</h3>
+            <p>{info}</p>
+            <a
+            href="#"
+            class="text-nowrap flex items-center gap-2 link decoration-dark-12 underline-offset-8 decoration-[2px]"
+            >VIEW PROJECR <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-5 h-5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"></path>
+            </svg>
+          </a>
+        </div>
+        <div class="">
+
+        </div>
+
+    </header>
+    <main class="border-t-2 ">
+        <slot/>
+    </main>
+</article>

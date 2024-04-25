@@ -1,0 +1,42 @@
+---
+import SectionTitle from "./ui/SectionTitle.astro";
+import { faqs } from "../const";
+import Section from "./ui/Section.astro";
+---
+
+<Section>
+  <header>
+    <SectionTitle title="FAQ'S" heading="Frequently Asked Questions" />
+  </header>
+  <main class="flex pt-5 md:pt-16">
+    <div class="">
+      {
+        faqs.slice(0, 4).map((faq) => (
+          <div class:list={["collapse  collapse-arrow border-t-2 rounded-none  p-5"]}>
+            <input type="radio" name="my-accordion" checked={faq.id == 10}  />
+            <div class="card-title collapse-title text-grey-70 ">{faq.q}</div>
+
+            <div class=" collapse-content">
+              <p class=" text-grey-50 ">{faq.a}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+    <div class="divider divider-horizontal p-0 m-0"/>
+    <div class="hidden md:flex flex-col ">
+      {
+        faqs.slice(4, faqs.length).map((faq) => (
+        <div class:list={["collapse  collapse-arrow border-t-2 rounded-none p-6",]}>
+            <input type="radio" name="my-accordion-1" checked={ faq.id == 16} />
+            <div class="card-title collapse-title text-grey-70 ">{faq.q}</div>
+
+            <div class=" collapse-content">
+              <p class=" text-grey-50 ">{faq.a}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </main>
+</Section>

@@ -1,0 +1,59 @@
+---
+import Section from "./Section.astro";
+import SectionTitle from "./SectionTitle.astro";
+
+
+type Props={
+    title: string
+}
+
+const{title} = Astro.props
+---
+
+<Section>
+    <article>
+        <header class="flex flex-col gap-3 md:flex-row justify-between md:items-center">
+          <h4 class="text-title3 text-grey-50 " >{title}</h4>
+          <div class="flex gap-6">
+            <div class="border-2 p-2 w-fit rounded-[5rem] hidden md:flex gap-3">
+              <button class="btn btn-circle">
+                <svg
+                  width="12"
+                  height="20"
+                  viewBox="0 0 12 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10.25 1.5L1.75 10L10.25 18.5"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg>
+              </button>
+              <button class="btn btn-circle">
+                <svg
+                  width="12"
+                  height="20"
+                  class="rotate-180"
+                  viewBox="0 0 12 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10.25 1.5L1.75 10L10.25 18.5"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg>
+              </button>
+            </div>
+        </header>
+        <div class="divider"/>
+        <main class="flex flex-col md:flex-row items-center justify-between gap-10 ">
+         <slot/>
+        </main>
+    </article>
+</Section>

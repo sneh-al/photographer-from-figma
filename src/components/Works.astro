@@ -1,0 +1,26 @@
+---
+import { projects } from "../const";
+import Work from "./ui/Work.astro";
+import WorkSection from "./ui/WorkSection.astro";
+
+---
+
+
+
+
+<WorkSection title="Portraits Photography">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-10">
+
+        {projects.map(project => <Work name={project.name} time={project.time} image={project.image} />)}
+      </div>
+</WorkSection>
+
+<WorkSection title="Events Photography">
+    {projects.map(project => <Work name={project.name} time={project.time} image={project.image} />)}
+
+</WorkSection>
+
+<WorkSection title="Commercial Photography">
+    {projects.map(project => <Work name={project.name} time={project.time} image={project.image} />)}
+
+</WorkSection>

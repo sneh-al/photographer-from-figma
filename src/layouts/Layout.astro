@@ -1,6 +1,7 @@
 ---
 import '@fontsource-variable/manrope';
-import Navbar from '../components/Navbar.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
 
 interface Props {
 	title: string;
@@ -22,18 +23,50 @@ const { title } = Astro.props;
 	<body>
 		<Navbar/>
 		<slot />
+		<Footer/>
 	</body>
 </html>
 <style is:global>
 	:root {
 		
 		font-family: 'Manrope Variable', sans-serif;
-		@apply bg-black text-white overflow-hidden
+		@apply bg-black text-grey-50 
 	}
 
 
 	.btn{
 		@apply bg-dark-12 text-white
+	}
+
+	p,li,.text-regular  {
+		@apply text-[14px] md:text-[16px] lg:text-[18px] text-grey-50
+	}
+	
+
+	.text-subtitle{
+		@apply text-[14px] md:text-[16px] lg:text-[20px] 
+
+	}
+
+	.text-title{
+		@apply text-[28px] md:text-[48px] lg:text-[58px] font-semibold 
+
+	}
+
+	.text-xbig{
+		@apply text-[40px] md:text-[60px] lg:text-[80px] font-semibold 
+	}
+
+
+	.text-title2{
+		@apply text-[20px] md:text-[24px] lg:text-[30px]
+	}
+
+	.text-title3{
+		@apply text-[28px] md:text-[34px] lg:text-[44px]
+	}
+	.card-title{
+		@apply text-[16px] md:text-[18px] lg:text-[20px]
 	}
 	
 </style>

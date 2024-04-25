@@ -1,0 +1,72 @@
+---
+import Section from "./ui/Section.astro";
+import SectionTitle from "./ui/SectionTitle.astro";
+---
+
+<Section>
+  <div class="divider"></div>
+
+  <header class="flex gap-5 md:gap-10 py-5 md:py-16">
+    <div class="flex flex-col gap-5">
+      <h3 class="text-title3">Contact Information</h3>
+      <p class="max-w-md">
+        Feel free to reach out to us through various channels. We are available
+        by phone, email, and social media for your convenience.
+      </p>
+    </div>
+
+    <div class="flex gap-5 flex-col md:flex-row text-grey-95">
+      <a
+        class="flex items-center justify-center gap-2"
+        href="tel:+1-123-456-7890"
+        >+1-123-456-7890 <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-5 h-5"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"></path>
+        </svg></a
+      >
+
+      <a
+        class="flex items-center justify-center gap-2"
+        href="mailto:info@damien braunphotography.com"
+        >info@damien braunphotography.com <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-5 h-5"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"></path>
+        </svg></a
+      >
+    </div>
+  </header>
+  <div class="divider"></div>
+
+  <main class="flex flex-col md:flex-row pt-5 md:pt-16">
+    <div class="flex flex-col gap-5">
+      <h3 class="text-title3">Send Me a Message</h3>
+      <p class="max-w-md">
+        Have a specific inquiry or message for us? Please use the contact form
+        below, and we'll get back to you promptly.
+      </p>
+    </div>
+    <div>
+        <form action="">
+            
+        </form>
+    </div>
+  </main>
+</Section>

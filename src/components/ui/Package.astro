@@ -1,0 +1,54 @@
+---
+import { Image } from "astro:assets";
+import Star from "@assets/svg/star.svg";
+type Props ={
+    title: string,
+    price : string | number,
+    outlines :string[]
+}
+
+const {title,price,outlines} = Astro.props
+---
+
+
+<div class="py-5 md:py-24 grid grid-cols-12 gap-6 ">
+
+    <div class="col-span-12 md:col-span-4 gap-6 text-grey-90">
+        <h6 class="card-title">{title}</h6>
+        <div class="flex items-center justify-between  gap-5">
+
+
+            <h5 class:list={["text-xbig w-fit",{"hidden" :(typeof price) != "number" }]}>{(typeof price) == "number" && `$${price}`}</h5>
+            <h5 class:list={["text-title w-fit ",{"hidden" :(typeof price) == "number" }]}>{(typeof price) != "number" && price}</h5>
+            <a
+            href="#"
+            class="text-nowrap md:w-full flex items-center text-grey-95 gap-2 link decoration-dark-12 underline-offset-8 decoration-[2px]"
+            >Book a Call <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-5 h-5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"></path>
+            </svg>
+          </a>
+        </div>
+    </div>
+    <div  class="col-span-12 md:col-span-8 gap-">
+        <ul class=" text-grey-70 flex flex-col gap-3">
+            {outlines.map((outline,index)=>{
+                return  <li class="flex items-center gap-5 p-3 border-2 rounded-xl">
+              <Image src={Star} alt="star" class="" />
+              {outline}
+            </li>
+            })}
+        </ul>
+    </div>
+
+</div>
+<hr/>

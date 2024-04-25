@@ -1,0 +1,39 @@
+---
+import facbookLogo from "@assets/svg/facebook.svg";
+import xLogo from "@assets/svg/x.svg";
+import linkedinLogo from "@assets/svg/linkedin.svg";
+import { Image } from "astro:assets";
+---
+
+<ul class:list={["flex gap-1 border-2 rounded-[5rem] w-fit p-2 bg-black",]}>
+<li>
+<a
+    href="#"
+    class="btn btn-circle"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    <Image src={facbookLogo} alt="facebbok" />
+</a>
+</li>
+<li>
+<a
+    href="#"
+    class="btn btn-circle"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    <Image src={xLogo} alt="twiter" />
+</a>
+</li>
+<li>
+<a
+    href="#"
+    class="btn btn-circle"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    <Image src={linkedinLogo} alt="linkedin" />
+</a>
+</li>
+</ul>
