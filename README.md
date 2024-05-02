@@ -1,7 +1,7 @@
 # Website using Astrojs and tailwindcss
 
 
-[![figma file](https://www.figma.com/community/file/1324089527430438614)
+[figma file](https://www.figma.com/community/file/1324089527430438614)
 
 > 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
