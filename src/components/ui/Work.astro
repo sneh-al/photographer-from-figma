@@ -5,15 +5,16 @@ type Props = {
   image: any;
   name: string;
   time: string;
+  id: string;
 };
-const { name,image,time } = Astro.props;
+const { name,image,time ,id} = Astro.props;
 ---
 
-<div class="card gap-3 ">
-  <Image src={image} alt={name} />
+<div id={id} class="card gap-3 h-full w-fit md:max-w-[40rem]   carousel-item">
+  <Image src={image} alt={name} class=" h-full w-full  " />
   <div class="flex justify-between">
     <div>
-      <h6 class="card-title text-grey-80">{name}</h6>
+      <h6 class="card-title-text text-grey-80">{name}</h6>
       <p class="">{time}</p>
     </div>
     <a

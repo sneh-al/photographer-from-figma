@@ -1,6 +1,7 @@
 ---
+import ContactForm from "./ContactForm";
 import Section from "./ui/Section.astro";
-import SectionTitle from "./ui/SectionTitle.astro";
+import SectionHeader from "./ui/SectionHeader.astro";
 ---
 
 <Section>
@@ -15,7 +16,7 @@ import SectionTitle from "./ui/SectionTitle.astro";
       </p>
     </div>
 
-    <div class="flex gap-5 flex-col md:flex-row text-grey-95">
+    <div class="flex gap-5 flex-col flex-wrap md:flex-row text-grey-95">
       <a
         class="flex items-center justify-center gap-2"
         href="tel:+1-123-456-7890"
@@ -37,7 +38,7 @@ import SectionTitle from "./ui/SectionTitle.astro";
       <a
         class="flex items-center justify-center gap-2"
         href="mailto:info@damien braunphotography.com"
-        >info@damien braunphotography.com <svg
+        >info@damienbraunphotography.com <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -55,18 +56,16 @@ import SectionTitle from "./ui/SectionTitle.astro";
   </header>
   <div class="divider"></div>
 
-  <main class="flex flex-col md:flex-row pt-5 md:pt-16">
-    <div class="flex flex-col gap-5">
+  <main class="flex flex-col md:flex-row  gap-10 justify-between pt-5 md:pt-16">
+    <div class="flex  w-full max-w-md flex-col gap-5">
       <h3 class="text-title3">Send Me a Message</h3>
       <p class="max-w-md">
         Have a specific inquiry or message for us? Please use the contact form
         below, and we'll get back to you promptly.
       </p>
     </div>
-    <div>
-        <form action="">
-            
-        </form>
+    <div class="flex gap-5 flex-col w-full ">
+        <ContactForm client:only="react" />
     </div>
   </main>
 </Section>

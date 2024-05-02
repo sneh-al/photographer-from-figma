@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import DP from "@assets/images/dp.png";
 import Star from "@assets/svg/star2.svg";
 import Social from "./Social.astro";
-import SectionTitle from "./ui/SectionTitle.astro";
+import SectionHeader from "./ui/SectionHeader.astro";
 import PageButton from "./ui/PageButton.astro";
 import Section from "./ui/Section.astro";
 ---
@@ -11,15 +11,14 @@ import Section from "./ui/Section.astro";
 <Section>
     <article>
         <header class="flex flex-col gap-3 md:flex-row justify-between md:items-center">
-          <SectionTitle title="About" heading="I am Damien"/>
-            <PageButton href="/about" text="Know More"/>
+          <SectionHeader title="About" heading="I am Damien" href="/about" text="Know More"/>
         </header>
         <div class="divider"/>
-        <main class="flex flex-col md:flex-row items-center justify-between gap-10 ">
-            <div class="md:w-1/2 ">
+        <main class="flex flex-col xl:flex-row items-center justify-between gap-10 ">
+            <div class="xl:w-1/2 ">
                 <Image src={DP} class="w-full" alt="damien braun"/>
             </div>
-            <div class="md:w-1/2 border-2  rounded-3xl ">
+            <div class="xl:w-1/2 border-2  rounded-3xl ">
            <div class="grid gap-5 md:gap-10 p-5 md:p-10">
             <h3 class="text-title2  text-grey-80 flex items-center gap-2 "><Image src={Star} alt="title"/> Introduction</h3>
             <p class="  text-balance">
@@ -29,7 +28,7 @@ import Section from "./ui/Section.astro";
            <div class=" divider "/>
            <div class="p-5 md:p-10 grid place-content-start gap-5 md:gap-10">
             <h3 class="text-title2 flex items-center gap-2 text-grey-80"><Image src={Star} alt="title"/> Contact Information</h3>
-                <div class="flex md:items-center text-xl gap-5 md:gap-10 flex-col md:flex-row">
+                <div class="flex md:items-center text-xl gap-5 md:gap-10 flex-col md:flex-row flex-wrap">
                     <div>
                         <h6 class=" text-grey-90">Email</h6>
                     <a href="mailto:damienbraun@gmail.com" class=" text-grey-70">damienbraun@gmail.com</a>
@@ -40,7 +39,7 @@ import Section from "./ui/Section.astro";
                     </div>
                   
                 </div>
-                <div class="flex flex-col gap-5 md:flex-row md:items-center"> 
+                <div class="flex flex-col gap-5 md:flex-row md:items-center flex-wrap"> 
                     <div>
                         <Social/>
                     </div>

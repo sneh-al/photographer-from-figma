@@ -1,0 +1,26 @@
+---
+import PageButton from "./PageButton.astro";
+
+type Props ={
+    title: string,
+    heading: string
+    href?: string,
+    text?:string,
+    isButton? :boolean
+}
+const {title,heading,href,text,isButton =true} =Astro.props
+---
+
+
+<header
+class="flex flex-col gap-3 md:flex-row justify-between w-full md:items-center">
+<div class=" uppercase">
+    <h3 class="text-subtitle text-grey-50">{title}</h3>
+<h2 class="text-title text-white">{heading}</h2>
+</div>
+
+
+  {isButton && <PageButton {href} {text} />}
+</header>
+
+

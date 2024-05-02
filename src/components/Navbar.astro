@@ -5,8 +5,8 @@ import Logo from "public/logo.svg"
 const pathname = Astro.url.pathname
 ---
 
-<header class="px-5 md:px-44 border-b-2  ">
-    <nav class="navbar  md:px-5 pb-0 border-l-2 border-r-2   ">
+<header class="px-5 md:px-24 xl:px-38   border-b-2  ">
+    <nav class="navbar  md:px-5 pb-0 border-l-2 border-r-2  pt-10 lg:pt-0  !pr-0   ">
         <div class="navbar-start ">
 
 
@@ -14,19 +14,22 @@ const pathname = Astro.url.pathname
             <Image src={Logo} class=" " alt={siteConfig.siteName}/>
             </a>
         </div>
-        <ul class="navbar-center hidden md:flex bg-dark-12 text-base rounded-t-lg font-medium gap-[1.5px] border-2   border-b-0  overflow-hidden text-white ">
+        <ul class="navbar-center hidden lg:flex bg-dark-12 text-base rounded-t-lg font-medium gap-[1.5px] border-2   border-b-0  overflow-hidden text-white ">
         
             {siteConfig.navLinks.slice(0,-1).map(link => <a class:list={["p-5  bg-black",{ "bg-transparent": pathname== link.href }]} href={link.href}>{link.name}</a>)}
         </ul>
 
-        <div class="navbar-end ">
+        <div class="navbar-end  ">
 
-            <a href={siteConfig.navLinks[4].href} class="btn hidden md:flex">{siteConfig.navLinks[4].name}</a>
-            <div class="md:hidden dropdown dropdown-bottom dropdown-end">
-                <div tabindex="0" role="button" class="btn rounded-none border-[2px] rounded-tl-lg border-b-0 border-r-0   !bg-black">
+            <div class="pr-[1rem] hidden lg:flex">
+
+                <a href={siteConfig.navLinks[4].href} class="btn ">{siteConfig.navLinks[4].name}</a>
+            </div>
+            <div class="lg:hidden dropdown dropdown-bottom dropdown-end bg-  ">
+                <div tabindex="0" role="button" class="btn rounded-none border-[2px]  rounded-tl-lg border-b-0 border-r-0  !bg-black">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
                 </div>
-                <ul tabindex="0" class="menu menu-lg border border-dark-12 shadow-dark-12  dropdown-content mt-3 z-[1] p-2 shadow-2xl   rounded-box text-nowrap  ">
+                <ul tabindex="0" class="menu menu-lg border border-dark-12 shadow-dark-12  dropdown-content mt-3 z-[1] p-2 shadow-2xl   rounded-box text-nowrap  bg-black">
                     {siteConfig.navLinks.slice(0,-1).map(link => <a class:list={["p-3 ",{ "text-grey-50  text-dark-12": pathname== link.href }]} href={link.href}>{link.name}</a>)}
                 </ul>
               </div>

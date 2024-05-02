@@ -1,25 +1,27 @@
 ---
 import { Image } from "astro:assets";
-import Star from "@assets/svg/star.svg";
+import Star from "@assets/svg/list.svg";
 type Props ={
     title: string,
     price : string | number,
-    outlines :string[]
+    outlines :string[],isHr?:boolean
 }
 
-const {title,price,outlines} = Astro.props
+const {title,price,outlines,isHr = true} = Astro.props
 ---
 
 
-<div class="py-5 md:py-24 grid grid-cols-12 gap-6 ">
+<div class="py-12 md:py-24 grid grid-cols-12 gap-6 ">
 
     <div class="col-span-12 md:col-span-4 gap-6 text-grey-90">
-        <h6 class="card-title">{title}</h6>
-        <div class="flex items-center justify-between  gap-5">
+        <h6 class="card-title-text">{title}</h6>
+        <div class="flex items-center justify-between  md:flex-wrap  xl:flex-nowrap  gap-5">
 
-
-            <h5 class:list={["text-xbig w-fit",{"hidden" :(typeof price) != "number" }]}>{(typeof price) == "number" && `$${price}`}</h5>
-            <h5 class:list={["text-title w-fit ",{"hidden" :(typeof price) == "number" }]}>{(typeof price) != "number" && price}</h5>
+<div>
+  
+  <h5 class:list={["text-xbig w-fit",{"hidden" :(typeof price) != "number" }]}>{(typeof price) == "number" && `$${price}`}</h5>
+  <h5 class:list={["text-title w-fit ",{"hidden" :(typeof price) == "number" }]}>{(typeof price) != "number" && price}</h5>
+</div>
             <a
             href="#"
             class="text-nowrap md:w-full flex items-center text-grey-95 gap-2 link decoration-dark-12 underline-offset-8 decoration-[2px]"
@@ -51,4 +53,4 @@ const {title,price,outlines} = Astro.props
     </div>
 
 </div>
-<hr/>
+{isHr &&<hr/>}

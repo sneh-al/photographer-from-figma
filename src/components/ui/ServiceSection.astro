@@ -1,45 +1,92 @@
 ---
+import { Image } from "astro:assets";
 
-
-type Props ={
-    title: string,
-    info: string
-}
-const{title,info} = Astro.props
+type Props = {
+  title: string;
+  info: string;
+  images: string[];
+};
+const { title, info, images } = Astro.props;
 ---
 
+<article class="py-5 xl:py-24">
+  <header class="grid gap-5 grid-cols-1 xl:grid-cols-2 py-5 ">
+    <div class="flex flex-col gap-5 xl:gap-10 text-grey-50">
+      <h3 class="text-title3 text-semibold">{title}</h3>
+      <p class="max-w-2xl">{info}</p>
+      <a
+        href="#"
+        class="text-nowrap flex items-center gap-2 link decoration-dark-12 underline-offset-8 decoration-[2px]"
+        >VIEW PROJECR <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-5 h-5"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"></path>
+        </svg>
+      </a>
+    </div>
 
-
-
-<article class="py-5 md:py-24 ">
-    <header class="grid grid-cols-1 md:grid-cols-2 py-5 md:py-24">
-        <div class="flex flex-col gap-5 md:gap-10 text-grey-50 ">
-            <h3 class=" text-title3 text-semibold">{title}</h3>
-            <p>{info}</p>
-            <a
-            href="#"
-            class="text-nowrap flex items-center gap-2 link decoration-dark-12 underline-offset-8 decoration-[2px]"
-            >VIEW PROJECR <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-5 h-5"
+    <div class="flex flex-col items-center relative">
+      <!-- image -->
+      <div class="h-full carousel rounded-box clip">
+        {
+          images.map((image, i) => (
+            <div
+              class=" carousel-item w-full aspect-video "
+              id={title + i.toString()}
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"></path>
-            </svg>
-          </a>
-        </div>
-        <div class="">
+              <Image inferSize class=" object-cover " src={image} alt={title} />
+            </div>
+          ))
+        }
+      </div>
+      <div class="absolute min-w-56 flex items-center top-[90%] overflow-hidden ">
+        <!-- buttons -->
 
-        </div>
 
-    </header>
-    <main class="border-t-2 ">
-        <slot/>
-    </main>
+        <div class="p-2 flex gap-2 border w-fit m-auto rounded-[5rem] ">
+          {
+            images.map((image, i) => (
+              <a
+                href={`#${title}${i}`}
+                class:list={["btn btn-circle btn-sm xl:btn-xl", { "!rotate-180": i === 1 }]}
+              >
+                <svg
+                  width="34"
+                  height="34"
+                  viewBox="0 0 34 34"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21.25 8.5L12.75 17L21.25 25.5"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="border-t-2 mt-10">
+    <slot />
+  </main>
 </article>
+
+<style>
+  .clip {
+    clip-path: polygon(100% 0%, 72% 0%, 28% 0%, 0% 0%, 0% 25%, 0% 54%, 0% 100%, 31% 100%, 39% 87%, 61% 87%, 69% 100%, 100% 100%, 100% 57%, 100% 25%);
+  }
+</style>

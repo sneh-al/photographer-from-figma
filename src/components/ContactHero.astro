@@ -1,0 +1,41 @@
+---
+import Imagecontact from "@assets/images/Imagecontact.png"
+import Imagecontacthero from "@assets/images/Imagecontacthero.png"
+
+import { Image } from "astro:assets"
+import Section from "./ui/Section.astro"
+import Social from "./Social.astro"
+import HeroTItle from "./ui/HeroTitle.astro"
+---
+
+
+
+
+
+<Section>
+    <article class="flex flex-col gap-6 relative xl:min-h-[95vh]">
+       <div class=" relative flex flex-col items-center">
+        <Image src={ Imagecontacthero} alt="portfolio " class=" xl:hidden  w-full h-full rounded-box md:rounded-[5rem] " />
+        <div class="xl:absolute right-0 -translate-y-5 md:-translate-y-10 xl:translate-y-0   top-32">
+            <Social/> 
+        </div>
+       </div>
+        <Image src={Imagecontact} alt="portfolio " class="absolute hidden xl:block  w-full h-full rounded-box md:rounded-[5rem] object-cover" />
+    <div class=" xl:pt-64  ">
+        <HeroTItle title="Get in Touch with Me" subtitle="Contact Me"/>
+    
+        <p class=" text-subtitle max-w-5xl">
+            Unlock the full spectrum of professional photography services tailored to your vision. From timeless portraits to captivating event coverage, I bring a unique blend of creativity and technical expertise to each project.
+        </p>
+      </div>
+     
+            
+            <p class="absolute right-10 bottom-10  hidden xl:block">
+                Scroll Down To Send <br/> me a Message
+            </p>
+        
+
+    </article>
+</Section>
+
+

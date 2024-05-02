@@ -1,0 +1,34 @@
+---
+
+import { Image } from "astro:assets"
+import Section from "./Section.astro"
+
+type Props ={
+    text: string,
+    image: any,
+    imageHero: any,
+}
+const {text,image,imageHero} = Astro.props
+---
+
+
+<Section>
+    <article class="flex flex-col gap-6 relative xl:min-h-[95vh]">
+        <Image src={imageHero} alt="portfolio " class="absolute hidden xl:block  w-full h-full rounded-box md:rounded-[5rem] " />
+    <Image src={image} alt="portfolio " class=" xl:hidden  w-full h-full rounded-box md:rounded-[5rem] object-cover" />
+    
+       <slot/>
+        <svg width="137" height="137" viewBox="0 0 137 137" class="hidden xl:block absolute bottom-0" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M68.4996 23.3802L74.8805 62.1191L113.619 68.5L74.8805 74.8809L68.4996 113.62L62.1187 74.8809L23.3799 68.5L62.1187 62.1191L68.4996 23.3802Z" fill="#2F2F37"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M68.5 135.359C105.425 135.359 135.359 105.425 135.359 68.5C135.359 31.5746 105.425 1.64072 68.5 1.64072C31.5746 1.64072 1.64072 31.5746 1.64072 68.5C1.64072 105.425 31.5746 135.359 68.5 135.359ZM68.5 137C106.332 137 137 106.332 137 68.5C137 30.6685 106.332 0 68.5 0C30.6685 0 0 30.6685 0 68.5C0 106.332 30.6685 137 68.5 137Z" fill="#2F2F37"/>
+            </svg>
+            
+            <p class="absolute right-20 bottom-16 w-36 hidden xl:block">
+                {text}
+            </p>
+        
+
+    </article>
+</Section>
+
+

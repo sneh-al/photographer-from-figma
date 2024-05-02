@@ -37,23 +37,129 @@ export const siteConfig = {
 
 export const projects = [
   {
-    id: 1,
-    name: "Faces of Resilience",
-    time: "March 2022",
-    image: Project1,
+    id:1,
+    title:"Portraits Photography",
+    works:[
+      {
+        id: 1,
+        name: "Faces of Resilience",
+        time: "March 2022",
+        image: Project1,
+      },
+      {
+        id: 2,
+        name: "A Wedding Tale",
+        time: "January 2020",
+        image: Project2,
+      },
+      {
+        id: 3,
+        name: "Product Elegance",
+        time: "January 2020",
+        image: Project3,
+      },
+      {
+        id: 4,
+        name: "Faces of Resilience",
+        time: "March 2022",
+        image: Project2,
+      },
+      {
+        id: 5,
+        name: "A Wedding Tale",
+        time: "January 2020",
+        image: Project1,
+      },
+      {
+        id: 6,
+        name: "Product Elegance",
+        time: "January 2020",
+        image: Project3,
+      },]
   },
   {
-    id: 2,
-    name: "A Wedding Tale",
-    time: "January 2020",
-    image: Project2,
+    id:2,
+    title:"Events Photography",
+    works:[
+      {
+        id: 1,
+        name: "Faces of Resilience",
+        time: "March 2022",
+        image: Project1,
+      },
+      {
+        id: 2,
+        name: "A Wedding Tale",
+        time: "January 2020",
+        image: Project2,
+      },
+      {
+        id: 3,
+        name: "Product Elegance",
+        time: "January 2020",
+        image: Project3,
+      },
+      {
+        id: 4,
+        name: "Faces of Resilience",
+        time: "March 2022",
+        image: Project2,
+      },
+      {
+        id: 5,
+        name: "A Wedding Tale",
+        time: "January 2020",
+        image: Project1,
+      },
+      {
+        id: 6,
+        name: "Product Elegance",
+        time: "January 2020",
+        image: Project3,
+      },]
   },
   {
-    id: 3,
-    name: "Product Elegance",
-    time: "January 2020",
-    image: Project3,
-  },
+    id:3,
+    title:"Commercial Photography",
+    works:[
+      {
+        id: 1,
+        name: "Faces of Resilience",
+        time: "March 2022",
+        image: Project1,
+      },
+      {
+        id: 2,
+        name: "A Wedding Tale",
+        time: "January 2020",
+        image: Project2,
+      },
+      {
+        id: 3,
+        name: "Product Elegance",
+        time: "January 2020",
+        image: Project3,
+      },
+      {
+        id: 4,
+        name: "Faces of Resilience",
+        time: "March 2022",
+        image: Project2,
+      },
+      {
+        id: 5,
+        name: "A Wedding Tale",
+        time: "January 2020",
+        image: Project1,
+      },
+      {
+        id: 6,
+        name: "Product Elegance",
+        time: "January 2020",
+        image: Project3,
+      },]
+  }
+
 ];
 
 export const faqs = [
@@ -108,6 +214,26 @@ export const faqs = [
 
 export const reviews = [
   {
+
+    name: "Emily Johnson",
+    city: "USA, California",
+    star: 5,
+    info: "Damien's photography doesn't just capture moments; it captures emotions. Hes work is simply mesmerizing.",
+  },
+  {
+    name: "John Smith",
+    city: "USA, California",
+    star: 5,
+    info: "Damien has an incredible talent for making every event feel effortless, and the results speak for themselves.",
+  },
+  {
+    name: "Samantha Davis",
+    city: "USA, California",
+    star: 5,
+    info: "I was blown away by Damien's ability to capture the essence of our wedding day. Hes photographs are our cherished memories.",
+  },
+  {
+    
     name: "Emily Johnson",
     city: "USA, California",
     star: 5,
@@ -187,6 +313,7 @@ export const services = [
         ],
       },
     ],
+    images: ["https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D","https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"]
   },
   {
     name: "Events Photography",
@@ -220,6 +347,7 @@ export const services = [
         ],
       },
     ],
+    images: ["https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D","https://images.unsplash.com/photo-1561489396-888724a1543d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"]
   },
   {
     name: "Commercial Photography",
@@ -252,5 +380,6 @@ export const services = [
         ],
       },
     ],
+    images: ["https://images.unsplash.com/photo-1601506521937-0121a7fc2a6b?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D","https://images.unsplash.com/photo-1603126004251-d01882b9bfd3?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"]
   },
 ];

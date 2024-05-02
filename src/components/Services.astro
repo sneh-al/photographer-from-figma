@@ -9,8 +9,8 @@ import ServiceSection from "./ui/ServiceSection.astro";
 <Section>
 
   {services.map(service => 
-  <ServiceSection title={service.name} info={service.info}>
-    {service.types.map(type => <Package title={type.name} price={type.fees} outlines={type.outline}/>)}
+  <ServiceSection title={service.name} info={service.info} images={service.images}>
+    {service.types.map((type,i) => <Package  isHr={i == 2 ? false :true} title={type.name} price={type.fees} outlines={type.outline}/>)}
 
   </ServiceSection>
 

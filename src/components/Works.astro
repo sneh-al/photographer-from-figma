@@ -1,26 +1,24 @@
 ---
 import { projects } from "../const";
+import Carousel from "./ui/Carousel";
 import Work from "./ui/Work.astro";
 import WorkSection from "./ui/WorkSection.astro";
-
 ---
 
 
-
-
-<WorkSection title="Portraits Photography">
-    <div class="flex flex-col md:flex-row items-center justify-between gap-10">
-
-        {projects.map(project => <Work name={project.name} time={project.time} image={project.image} />)}
+{
+  projects.map((project) => (
+    <WorkSection title={project.title} total={project.works.length}>
+        
+    
+      <div class="carousel flex gap-10">
+        {project.works.map((work) => (
+          <Work id={project.id.toString()+ work.id.toString()} name={work.name} time={work.time} image={work.image} />
+        ))}
       </div>
-</WorkSection>
+      
+    </WorkSection>
+  ))
+}
 
-<WorkSection title="Events Photography">
-    {projects.map(project => <Work name={project.name} time={project.time} image={project.image} />)}
 
-</WorkSection>
-
-<WorkSection title="Commercial Photography">
-    {projects.map(project => <Work name={project.name} time={project.time} image={project.image} />)}
-
-</WorkSection>

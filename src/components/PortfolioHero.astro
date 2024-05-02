@@ -1,0 +1,21 @@
+---
+import Imageportfolio from "@assets/images/Imageportfolio.png"
+import heroImage from "@assets/images/portHero.png"
+import Section from "./ui/Section.astro"
+import CompanyList from "./CompanyList.tsx"
+import { Image } from "astro:assets"
+import HeroTitle from "./ui/HeroTitle.astro"
+import Heroui from "./ui/Heroui.astro"
+---
+
+
+<Heroui text="Scroll Down To See The Works" image={Imageportfolio} imageHero={heroImage}>
+    <div class="flex gap-0 flex-col xl:text-balance xl:absolute bg-black top-0 left-0  xl:max-w-6xl xl:p-10 rounded-br-box xl:rounded-br-[5rem]   ">
+        <HeroTitle title="Visual Poetry in Pixels" subtitle="Portfolio"/>
+          
+        <p class="pt-5 text-subtitle">
+            Step into a visual journey that encapsulates the essence of my lens. Each photograph in this portfolio is a narrative, a frozen moment in time, and a testament to the artistry and passion poured into every frame. Explore the diverse tapestry of stories I've had the privilege to capture and witness the world through my lens.
+        </p>
+    </div>
+</Heroui>
+<CompanyList client:only="react"/>

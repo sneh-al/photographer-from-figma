@@ -4,60 +4,24 @@ import { projects } from "../const";
 
 import { Image } from "astro:assets";
 
-import SectionTitle from "./ui/SectionTitle.astro";
+import SectionHeader from "./ui/SectionHeader.astro";
 import PageButton from "./ui/PageButton.astro";
 import Work from "./ui/Work.astro";
 ---
 
 <Section>
+
   <article>
     <header
       class="flex flex-col gap-3 md:flex-row justify-between md:items-center">
-      <SectionTitle title="Portfolio" heading="Explore My photography work." />
-      <div class="flex gap-6">
-        <div class="border-2 p-2 w-fit rounded-[5rem] hidden md:flex gap-3">
-          <button class="btn btn-circle">
-            <svg
-              width="12"
-              height="20"
-              viewBox="0 0 12 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M10.25 1.5L1.75 10L10.25 18.5"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"></path>
-            </svg>
-          </button>
-          <button class="btn btn-circle">
-            <svg
-              width="12"
-              height="20"
-              class="rotate-180"
-              viewBox="0 0 12 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M10.25 1.5L1.75 10L10.25 18.5"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"></path>
-            </svg>
-          </button>
-        </div>
-        <PageButton href="/services" text="View All Services" />
-      </div>
+      <SectionHeader title="Portfolio" heading="Explore My photography work." href="/portfolio" text="View All Works"  />
+      
     </header>
     <div class="divider"></div>
     <main class=" pt-5 md:pt-16">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-10">
+      <div class=" flex carousel gap-10">
 
-        {projects.map(project => <Work name={project.name} time={project.time} image={project.image} />)}
+        {projects[0].works.map(work => <Work id={ work.id.toString()} name={work.name} time={work.time} image={work.image} />)}
       </div>
 
     </main>

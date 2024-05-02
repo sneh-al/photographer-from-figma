@@ -1,6 +1,6 @@
 ---
 
-import SectionTitle from "./ui/SectionTitle.astro";
+import SectionHeader from "./ui/SectionHeader.astro";
 import PageButton from "./ui/PageButton.astro";
 import Section from "./ui/Section.astro";
 import { timeline } from "../const";
@@ -12,7 +12,7 @@ import Card from "./Card.astro";
   <article>
     <header
       class="flex flex-col gap-3 md:flex-row justify-between md:items-center">
-      <SectionTitle title="Journey" heading="Damien's Journey - A Timeline" />
+      <SectionHeader title="Journey" heading="Damien's Journey - A Timeline" isButton={false} />
       
     </header>
     <div class="divider"></div>
