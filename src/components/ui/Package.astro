@@ -43,7 +43,7 @@ const {title,price,outlines,isHr = true} = Astro.props
     </div>
     <div  class="col-span-12 md:col-span-8 gap-">
         <ul class=" text-grey-70 flex flex-col gap-3">
-            {outlines.map((outline,index)=>{
+            {outlines.map((outline)=>{
                 return  <li class="flex items-center gap-5 p-3 border-2 rounded-xl">
               <Image src={Star} alt="star" class="" />
               {outline}

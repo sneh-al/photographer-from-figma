@@ -1,5 +1,4 @@
-import React from "react";
-import PurpleLink from "./ui/PurpleLink.astro";
+
 
 const ContactForm = () => {
   return (
@@ -49,7 +48,7 @@ const ContactForm = () => {
 
 export default ContactForm;
 
-const Input = ({ label, type, name }) => {
+const Input = ({ label, type, name } :{label: string, type: string, name: string}) => {
   return (
     <label className="form-control w-full">
       <div className="label">

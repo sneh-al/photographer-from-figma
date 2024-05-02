@@ -1,6 +1,5 @@
 ---
 import { projects } from "../const";
-import Carousel from "./ui/Carousel";
 import Work from "./ui/Work.astro";
 import WorkSection from "./ui/WorkSection.astro";
 ---
@@ -8,7 +7,7 @@ import WorkSection from "./ui/WorkSection.astro";
 
 {
   projects.map((project) => (
-    <WorkSection title={project.title} total={project.works.length}>
+    <WorkSection title={project.title} >
         
     
       <div class="carousel flex gap-10">

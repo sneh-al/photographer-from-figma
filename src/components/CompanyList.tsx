@@ -1,4 +1,3 @@
-import starlogo from "@assets/svg/star.svg";
 import Marquee from "./ui/Marquee";
 const Companylist = [
   <svg width="175" height="21" viewBox="0 0 175 21" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -1,14 +1,12 @@
 ---
 import Section from "./Section.astro";
-import SectionHeader from "./SectionHeader.astro";
 
 
 type Props={
     title: string,
-    total: number
 }
 
-const{title,total} = Astro.props
+const{title} = Astro.props
 ---
 
 <Section>
@@ -63,16 +61,4 @@ const{title,total} = Astro.props
 </Section>
 
 
-<script define:vars={{ total }}>
-   const buttonLeft  = document.querySelector('.prev');
-    const buttonRight  = document.querySelector('.next');
-  
-    buttonRight?.addEventListener("click",function () {
-      
-    }) 
-    buttonLeft?.addEventListener("click",function () {
-      console.log("scroll left")
-      main.scrollLeft -= 20;
-    }) 
-   
-</script>
+

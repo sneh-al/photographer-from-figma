@@ -53,7 +53,7 @@ const { title, info, images } = Astro.props;
 
         <div class="p-2 flex gap-2 border w-fit m-auto rounded-[5rem] ">
           {
-            images.map((image, i) => (
+            images.map((_, i) => (
               <a
                 href={`#${title}${i}`}
                 class:list={["btn btn-circle btn-sm xl:btn-xl", { "!rotate-180": i === 1 }]}
